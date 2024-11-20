@@ -68,22 +68,13 @@ def send_prompt(msg: str, access_token: str):
         return "Ошибка при получении ответа от GigaChat."
 
 
-def sent_prompt_and_get_response(msg: str, language: str):
+def sent_prompt_and_get_response(msg: str):
     access_token = get_access_token()
 
-    # Создаем сообщение в зависимости от языка
-    messages = {
-        "ru": f' {msg} ',
-        "en": f'{msg} '
-    }
-
-    # Получаем сообщение в зависимости от языка, по умолчанию используется русский
-    message = messages.get(language, messages["ru"])
 
     # Проверка наличия access token
     if access_token:
-        # Получаем ответ от send_prompt и добавляем смайлики
-        response = send_prompt(message, access_token)
+        response = send_prompt(msg, access_token)
         decorated_response = f'✨ {response} 🌟️'
         return decorated_response
     else:

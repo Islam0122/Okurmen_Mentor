@@ -46,7 +46,7 @@ async def process_help_request(message: types.Message, state: FSMContext, bot: B
     language = user_preferences.get(message.from_user.id, {}).get('language', 'ru')
 
     if message.text:
-        generated_help = sent_prompt_and_get_response(message.text, language)
+        generated_help = sent_prompt_and_get_response(message.text)
         await message.answer(generated_help, reply_markup=ReplyKeyboardRemove())
         await state.clear()
         await message.answer(messages[language]['review_sent'], reply_markup=start_functions_keyboard(language))

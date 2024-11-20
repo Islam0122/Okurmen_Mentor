@@ -11,8 +11,8 @@ from requests.auth import HTTPBasicAuth
 
 load_dotenv(find_dotenv())
 
-CLIENT_ID = os.getenv('CLIENT_ID')
-SECRET = os.getenv('SECRET')
+CLIENT_ID = '71b92890-bf91-4b6b-9645-6561b93e3d7d'
+SECRET = '3278c7e4-6c0c-4b7b-a8b7-9baadb679504'
 
 
 def get_access_token() -> str:

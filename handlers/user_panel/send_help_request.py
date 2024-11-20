@@ -133,6 +133,6 @@ async def process_media(message: Message, state: FSMContext, bot: Bot):
     elif message.text:
         await bot.send_message(chat_id=bot.group_id, text=f"{additional_info}\n")
 
-    await message.answer(messages[language]['request_sent'], reply_markup=get_return_keyboard(language))
+    await message.answer(messages[language]['request_sent'], reply_markup=ReplyKeyboardRemove())
     await state.clear()
 

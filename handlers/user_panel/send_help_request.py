@@ -111,7 +111,7 @@ async def process_media(message: Message, state: FSMContext, bot: Bot):
     group = data['group']
     problem = data['problem']
 
-    if message.text.lower() in cancel:
+    if message.text in cancel:
         await state.clear()
         await message.answer(messages[language]['request_canceled'], reply_markup= ReplyKeyboardRemove())
         return
